@@ -7,7 +7,7 @@ router.get('/get-logged-user', authMiddleware, async (req, res) =>{
     res.send({message: 'user fetched successfully', success: true, data: user});
   }
   catch(error) {
-    res.send({message: error.message, success: true})
+    res.status(400).send({message: error.message, success: true})
   }
 })
 
@@ -18,7 +18,7 @@ router.get('/get-all-users', authMiddleware, async (req, res) => {
   }
   catch(error)
   {
-    res.send({message: error.message, success: true})
+    res.status(400).send({message: error.message, success: true})
   }
 })
 
