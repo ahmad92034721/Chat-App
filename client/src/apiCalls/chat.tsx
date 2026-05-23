@@ -1,9 +1,9 @@
-import { axiosInstance } from "./index"
+import { axiosInstance, url } from "./index"
 import type { ApiAllChatsResponse } from "../models/response"
 export const  getAllUserChats = async () =>
 {
     const token = localStorage.getItem('token')
-    const response = await axiosInstance.get<ApiAllChatsResponse>('/api/chat/get-all-chats', {
+    const response = await axiosInstance.get<ApiAllChatsResponse>(url + '/api/chat/get-all-chats', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -14,7 +14,7 @@ export const  getAllUserChats = async () =>
 
 export const createNewChat = async (members: string[]) => {
   const token = localStorage.getItem('token');
-  const response = await axiosInstance.post('/api/chat/create-new-chat', {members},{
+  const response = await axiosInstance.post(url + '/api/chat/create-new-chat', {members},{
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -24,7 +24,7 @@ export const createNewChat = async (members: string[]) => {
 
 export const clearUnreadMessages = async (chatId: string) => {
   const token = localStorage.getItem('token');
-  const response = await axiosInstance.post('/api/chat/clear-unread-message', {chatId},{
+  const response = await axiosInstance.post(url + '/api/chat/clear-unread-message', {chatId},{
       headers: {
         Authorization: `Bearer ${token}`
       }

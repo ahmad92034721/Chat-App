@@ -842,7 +842,7 @@ h2 {
   .app-chat-area {
     position: absolute;
     width: 75%;
-    top: calc(100%- 80px);
+    top: calc(100% - 80px);
     left: calc(100% - 590px);
     width: calc(100% - 320px);
     height: calc(100vh - 130px);

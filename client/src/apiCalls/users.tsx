@@ -1,8 +1,8 @@
-import { axiosInstance } from "./index";
+import { axiosInstance, url } from "./index";
 import type { ApiAllUsersResponse, ApiLoginResponse, ApiUserResponse } from "../models/response";
 export const getLoggedUser = async () => {
   const token = localStorage.getItem("token");
-  const response = await axiosInstance.get<ApiLoginResponse>(
+  const response = await axiosInstance.get<ApiLoginResponse>(url + 
     "/api/user/get-logged-user",
     {
       headers: {
@@ -14,7 +14,7 @@ export const getLoggedUser = async () => {
 };
 export const getAllUsers = async () => {
   const token = localStorage.getItem("token");
-  const response = await axiosInstance.get<ApiAllUsersResponse>(
+  const response = await axiosInstance.get<ApiAllUsersResponse>(url + 
     "/api/user/get-all-users",
     {
       headers: {
@@ -27,7 +27,7 @@ export const getAllUsers = async () => {
 
 export const uploadUserProfilePic = async (image) => {
   const token = localStorage.getItem("token");
-  const response = await axiosInstance.post<ApiUserResponse>(
+  const response = await axiosInstance.post<ApiUserResponse>( url +
     "/api/user/upload-profile-pic",
     { image },
     {
