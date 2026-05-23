@@ -13,7 +13,7 @@ function Home() {
   );
    const socketRef = useRef<Socket | null>(null);
   useEffect(() => {
-    socketRef.current = io("http://localhost:3000");
+    socketRef.current = io("https://chat-app-server-f9vr.onrender.com");
 
     return () => {
       socketRef.current?.disconnect();

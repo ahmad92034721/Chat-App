@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const url = "http://localhost:3000";
+export const url = "https://chat-app-server-f9vr.onrender.com";
 
 export const axiosInstance = axios.create({
   headers: {
