@@ -2,7 +2,8 @@ export interface Message {
   _id?: string,
   chatId: string,
   sender: string,
-  text: string,
+  text?: string,
+  image? : string,
   read?: boolean,
-  updatedAt?: string;
+  createdAt?: string;
 }

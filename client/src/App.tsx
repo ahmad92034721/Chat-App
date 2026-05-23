@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import Loader from "./components/Loader";
+import Profile from "./pages/profile/profile";
 import { useSelector } from "react-redux";
 import type { RootState } from "./redux/store";
 
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>}></Route>
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
         </Routes>

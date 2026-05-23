@@ -21,3 +21,13 @@ export const createNewChat = async (members: string[]) => {
     })
     return response.data
   }
+
+export const clearUnreadMessages = async (chatId: string) => {
+  const token = localStorage.getItem('token');
+  const response = await axiosInstance.post('/api/chat/clear-unread-message', {chatId},{
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    return response.data
+  }

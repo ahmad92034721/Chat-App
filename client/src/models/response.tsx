@@ -6,6 +6,11 @@ export interface ApiLoginResponse {
   success: boolean;
   data: User | null;
 }
+export interface ApiUserResponse {
+  message: string;
+  success: boolean;
+  data: User | null;
+}
 export interface ApiAllUsersResponse {
   message: string;
   success: boolean;

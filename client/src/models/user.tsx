@@ -1,3 +1,5 @@
+import type { Message } from "./message";
+
 export interface User {
   _id: string;
   firstName: string;
@@ -20,6 +22,6 @@ export interface LoginUserPayload {
 export interface Chat {
   _id: string
   members: User[],
-  lastMessage?: string,
+  lastMessage?: Message,
   unreadMessageCount?: number
 }
